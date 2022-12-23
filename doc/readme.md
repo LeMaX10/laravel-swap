@@ -4,19 +4,19 @@
 
 <table>
    <tr>
-      <td><img src="https://s3.amazonaws.com/swap.assets/fixer_icon.png?v=2" width="50px"/></td>
-      <td><a href="https://fixer.io">Fixer</a> is a simple and lightweight API for foreign exchange rates that supports up to 170 world currencies.</td>
+      <td><img src="https://assets.apilayer.com/apis/fixer.png" width="50px"/></td>
+      <td><a href="https://apilayer.com/marketplace/fixer-api">Fixer</a> is a simple and lightweight API for foreign exchange rates that supports up to 170 world currencies.</td>
    </tr>
    <tr>
-     <td><img src="https://s3.amazonaws.com/swap.assets/currencylayer_icon.png" width="50px"/></td>
-     <td><a href="https://currencylayer.com">currencylayer</a> provides reliable exchange rates and currency conversions for your business up to 168 world currencies.</td>
+     <td><img src="https://assets.apilayer.com/apis/currency_data.png" width="50px"/></td>
+     <td><a href="https://apilayer.com/marketplace/currency_data-api">Currency Data</a> provides reliable exchange rates and currency conversions for your business up to 168 world currencies.</td>
    </tr>
    <tr>
-     <td><img src="https://exchangeratesapi.io/assets/images/api-logo.svg" width="50px"/></td>
-     <td><a href="https://exchangeratesapi.io">exchangeratesapi</a> provides reliable exchange rates and currency conversions for your business with over 15 data sources.</td>
+     <td><img src="https://assets.apilayer.com/apis/exchangerates_data.png" width="50px"/></td>
+     <td><a href="https://apilayer.com/marketplace/exchangerates_data-api">Exchange Rates Data</a> provides reliable exchange rates and currency conversions for your business with over 15 data sources.</td>
    </tr>   
    <tr>
-     <td><img src="https://global-uploads.webflow.com/5ebbd0a566a3996636e55959/5ec2ba27ede983917dbff22f_favicon.png" width="50px"/></td>
+     <td><img src="https://global-uploads.webflow.com/5ebbd0a566a3996636e55959/5ec2ba29feeeb05d69160e7b_webclip.png" width="50px"/></td>
      <td><a href="https://www.abstractapi.com/">Abstract</a> provides simple exchange rates for developers and a dozen of APIs covering thousands of use cases.</td>
    </tr>  
 </table>
@@ -110,21 +110,21 @@ Copy the [configuration](config/swap.php) to `/config/swap.php` if you wish to o
 
 ## Configuration
 
-By default Swap uses the [Fixer](http://fixer.io) service, and will fallback to [currencylayer](https://currencylayer.com) in case of failure.
+By default Swap uses the [Fixer](https://apilayer.com/marketplace/fixer-api) service, and will fallback to [Currency Data](https://apilayer.com/marketplace/currency_data-api) in case of failure.
 
 If you wish to use different services, you can modify the `services` configuration:
 
 ```php
 // app/config/swap.php
 'services' => [
-    'fixer' => ['access_key' => 'YOUR_KEY'],
-    'currency_layer' => ['access_key' => 'secret', 'enterprise' => false],
-    'exchange_rates_api' => ['access_key' => 'secret'],
-    'abstract_api' => ['api_key' => 'secret'],
+  'apilayer_fixer' => ['api_key' => 'Get your key here: https://apilayer.com/marketplace/fixer-api'],
+  'apilayer_currency_data' => ['api_key' => 'Get your key here: https://apilayer.com/marketplace/currency_data-api'],
+  'apilayer_exchange_rates_data' => ['api_key' => 'Get your key here: https://apilayer.com/marketplace/exchangerates_data-api'],
+  'abstract_api' => ['api_key' => 'Get your key here: https://app.abstractapi.com/users/signup'],
 ]    
 ```
 
-We recommend to use one of the [services that support our project](#sponsors), providing a free plan up to 1,000 requests per day.
+We recommend to use one of the [services that support our project](#sponsors), providing a free plan up to 100 requests per month.
 
 The complete list of all supported services is available [here](#supported-services).
 
@@ -367,10 +367,13 @@ Here is the complete list of supported services and their possible configuration
 ```php
 // app/config/swap.php
 'services' => [
+    'apilayer_fixer' => ['api_key' => 'Get your key here: https://apilayer.com/marketplace/fixer-api'],
+    'apilayer_currency_data' => ['api_key' => 'Get your key here: https://apilayer.com/marketplace/currency_data-api'],
+    'apilayer_exchange_rates_data' => ['api_key' => 'Get your key here: https://apilayer.com/marketplace/exchangerates_data-api'],
+    'abstract_api' => ['api_key' => 'Get your key here: https://app.abstractapi.com/users/signup'],
     'fixer' => ['access_key' => 'YOUR_KEY'],
     'currency_layer' => ['access_key' => 'secret', 'enterprise' => false],
     'exchange_rates_api' => ['access_key' => 'secret'],
-    'abstract_api' => ['api_key' => 'secret'],
     'coin_layer' => ['access_key' => 'secret', 'paid' => false],
     'european_central_bank' => true,
     'national_bank_of_romania' => true,
